@@ -1,9 +1,13 @@
 import React,{useRef, useContext} from 'react';
 import HeaderContext from '../Store/HeaderContext/HeaderContext';
+import BodyContext from '../Store/BodyContext/BodyContext';
 import classes from './Header.module.css'
 
 const Header = (props) => {
     const dataContext = useContext(HeaderContext);
+    const bodyLength = useContext(BodyContext);
+console.log("bodylength",bodyLength);
+    const cartCount = bodyLength.items.reduce((a,c)=>{return a+((+c.L)+(+c.M)+(+c.S))},0)
     const name = useRef();
     const description=useRef();
     const price = useRef();
@@ -25,6 +29,7 @@ e.preventDefault();
         const m= medium.current.value;
         const s= small.current.value;
         dataContext.addData({id:Math.random(),name:name1,description:des,price:priceInNumber, L:l,M:m,S:s})
+        
 
     }
   return (
@@ -49,7 +54,7 @@ e.preventDefault();
       
 
 
-      <button onClick={props.showCartFn}>Cart</button>
+      <button onClick={props.showCartFn}>Cart {cartCount}</button>
     </div>
   )
 }

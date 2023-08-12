@@ -5,7 +5,7 @@ import DisplayEachProduct from './DisplayEachProduct';
 
 const DisplayAddedProduct = () => {
     const dataContext = useContext(HeaderContext);
-    console.log("display",dataContext)
+    // console.log("display",dataContext)
   return (
     <div className={classes.product}>
     <ul className={classes.list}>
