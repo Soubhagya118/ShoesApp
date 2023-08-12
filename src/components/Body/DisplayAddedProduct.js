@@ -8,8 +8,8 @@ const DisplayAddedProduct = () => {
     console.log("display",dataContext)
   return (
     <div className={classes.product}>
-    <ul>
-    {data.map((e)=><DisplayEachProduct key={e.id} {...e}></DisplayEachProduct>)}
+    <ul className={classes.list}>
+    {dataContext?.data.map((e)=><DisplayEachProduct key={e.id} {...e}></DisplayEachProduct>)}
 
     </ul>
     </div>

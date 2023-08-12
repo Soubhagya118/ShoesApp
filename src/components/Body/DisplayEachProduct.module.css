@@ -1,0 +1,13 @@
+.eachList{
+    display: flex;
+}
+
+form{
+    display: flex;
+}
+form input{
+    width: 200px;
+    height: 30px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
