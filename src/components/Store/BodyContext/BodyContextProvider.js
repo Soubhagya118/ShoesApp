@@ -9,7 +9,7 @@ const defaultValue={
 const reducerFn=(state,action)=>{
   if(action.type=='add'){
     const actionItemPrice =+action.item.price;
-    
+
     let actionTotalPrice;
     let quanL;
     let quanM;
@@ -30,8 +30,12 @@ const reducerFn=(state,action)=>{
   
 
     const updatedTotalAmount= state.totalAmount+actionTotalPrice;
+    let updatedItems ;
 
-    let updatedItems = state.items.concat(action.item);
+    const currentIndex = state.items.filter((e)=>e.id==action.item.id);
+    const currentItem = state.items[currentIndex];
+
+     updatedItems = state.items.concat(action.item);
     return {
       items:updatedItems,
       totalAmount:updatedTotalAmount
